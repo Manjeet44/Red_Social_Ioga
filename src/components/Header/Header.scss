@@ -1,0 +1,19 @@
+@import '../../scss/index.scss';
+
+.header {
+    position: relative;
+    padding: 12px 0;
+    background-color: $background-light;
+    border-bottom: 1px solid $font-link;
+    z-index: 1;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 25px;
+
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../scss/index.scss';
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100%;
+
+    &_encabezado {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        &-button {
+        
+            
+        }
+    }
+
+    &_meditaciones {
+        margin-bottom: 2rem;
+    }
+    
+    h2 {
+        margin-top: 30px;
+        font-size: 3rem;
+        color: $border-bottom-purple;
+    }
+}
+
+.ui.button.btn-new {
+    background-color: $border-bottom-purple !important;
+    color: $font-light !important;
+    border-color: $border-header-purple !important;
+}
