@@ -16,14 +16,11 @@
         width: 100%;
         justify-content: space-between;
         margin-bottom: 10px;
-        &-button {
         
-            
-        }
     }
 
     &_meditaciones {
-        margin-bottom: 2rem;
+        padding: 1rem;
     }
     
     h2 {
@@ -37,4 +34,7 @@
     background-color: $border-bottom-purple !important;
     color: $font-light !important;
     border-color: $border-header-purple !important;
+    &:hover {
+        opacity: 95%;
+    }
 }

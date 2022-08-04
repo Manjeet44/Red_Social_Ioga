@@ -7,13 +7,14 @@ import './Meditacion.scss';
 //TODO: Nom usuari de qui puja sa Meditacio
 
 export default function Meditacion({asana, username}) {
-  const {beneficios, descripcion, nombre} = asana;
+  const {beneficios, descripcion, nombre, file} = asana;
 
   return (
     <div className='contenedor_box'>
         <div className='contenedor_box-imagen'>
             <Link to='/'>
-            <img src={Logo} className='contenedor_box__imagen-asana' alt='logo'/>
+              {/* <Image className='contenedor_box__imagen-asana' src={file} alt='logo'/> */}
+            <img src={file ? file : Logo} className='contenedor_box__imagen-asana' alt='logo'/> 
             </Link>
             <div className='contenedor_box-likes'> Subido por: {username} &#9829;160 Likes</div>
         </div>

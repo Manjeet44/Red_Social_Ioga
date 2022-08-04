@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const NEW_ASANA = gql`
-    mutation newAsana($input: AsanaInput){
-        newAsana(input: $input) {
+    mutation newAsana($input: AsanaInput, $file: Upload){
+        newAsana(input: $input, file: $file) {
             nombre
             beneficios
             descripcion
@@ -18,6 +18,7 @@ export const GET_ASANA_USER = gql`
             nombre
             beneficios
             descripcion
+            file
         }
     }
 `;

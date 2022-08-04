@@ -5,8 +5,9 @@
     margin-bottom: 10px;
     background-color: $background-light;
     height: 285px;
-    width: 95%;
+    width: 100%;
     padding: 0.5rem;
+    padding-right: 3rem;
     display: grid;
     border: 5px solid $border-bottom-purple;
     column-gap: 2rem;
@@ -24,7 +25,7 @@
     &__imagen-asana {
         max-width: 20rem;
         height: 15rem;
-        margin: 1rem 1rem 0rem 3rem;
+        margin: 1rem 1rem 0rem 4rem;
         border: 3px solid $border-header-purple;
     }
 

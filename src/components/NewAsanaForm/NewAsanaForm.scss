@@ -1,5 +1,16 @@
 @import '../../scss/index.scss';
 
 .form-asana {
-    
+    h2 {
+        font-size: 20px !important;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: $border-bottom-purple;
+        margin: 2rem 2rem;
+    }
+    input {
+        padding: 15px !important;
+        background-color: #f9f9f9 !important;
+    }
 }

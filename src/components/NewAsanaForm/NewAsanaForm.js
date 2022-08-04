@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
@@ -6,14 +6,12 @@ import { useMutation } from '@apollo/client';
 import { NEW_ASANA, GET_ASANA_USER } from '../../gql/asana';
 import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-//import {useDropzone} from 'react-dropzone';
 import useAuth from '../../hooks/useAuth';
 import './NewAsanaForm.scss';
 
-//TODO: Pujar imatges
-
 export default function NewAsanaForm() {
     const {auth} = useAuth();
+    const [newImage, setNewImage] = useState(null);
 
     const [newAsana] = useMutation(NEW_ASANA, {
         update(cache, {data: {newAsana}}) {
@@ -36,8 +34,7 @@ export default function NewAsanaForm() {
         initialValues: {
             nombre: '',
             descripcion: '',
-            beneficios: ''
-            // file: ''
+            beneficios: '',
         },
         validationSchema: Yup.object({
             nombre: Yup.string().required('El Nombre es Obligatorio'),
@@ -49,12 +46,14 @@ export default function NewAsanaForm() {
                 const datosAsana = formData;
                 await newAsana({
                     variables: {
-                        input: datosAsana
+                        input: datosAsana,
+                        file: newImage
                     }
                 });
                 toast.success('Asana Agregada Correctamente');
                 setTimeout(() => {
                     navigate('/meditaciones')
+                    setNewImage(null)
                 }, 1500);
                 
             } catch (error) {
@@ -64,41 +63,46 @@ export default function NewAsanaForm() {
 
     });
   return (
-    <Form onSubmit={formik.handleSubmit}>
-        <Form.Input 
-                type='text'
-                placeholder='Nombre'
-                name='nombre'
-                value={formik.values.nombre}
-                onChange={formik.handleChange}
-                error={formik.errors.nombre}
-        />
-        <Form.Input 
-                type='text'
-                placeholder='Descripcion'
-                name='descripcion'
-                value={formik.values.descripcion}
-                onChange={formik.handleChange}
-                error={formik.errors.descripcion}
-        />
-        <Form.Input 
-                type='text'
-                placeholder='Beneficios'
-                name='beneficios'
-                value={formik.values.beneficios}
-                onChange={formik.handleChange}
-                error={formik.errors.beneficios}
-        />
-        {/* <Form.Input 
-                type='file'
-                name='file'
-                value={formik.values.file}
-                onChange={formik.handleChange}
-                error={formik.errors.file}
-        /> */}
-        
-        <Button type='submit' className='btn-submit'>Agregar Asana</Button>
+      <>
+        <Form className='form-asana' onSubmit={formik.handleSubmit}>
+        <h2>Nueva Meditacion</h2>
+            <Form.Input 
+                    type='text'
+                    placeholder='Nombre'
+                    name='nombre'
+                    value={formik.values.nombre}
+                    onChange={formik.handleChange}
+                    error={formik.errors.nombre}
+            />
+            <Form.Input 
+                    type='text'
+                    placeholder='Descripcion'
+                    name='descripcion'
+                    value={formik.values.descripcion}
+                    onChange={formik.handleChange}
+                    error={formik.errors.descripcion}
+            />
+            <Form.Input 
+                    type='text'
+                    placeholder='Beneficios'
+                    name='beneficios'
+                    value={formik.values.beneficios}
+                    onChange={formik.handleChange}
+                    error={formik.errors.beneficios}
+            />
+            <Form.Input 
+                    type='file'
+                    name='file'
+                    value={formik.values.file}
+                    onChange={(e) => {
+                        setNewImage(e.target.files[0])
+                    }}
+                    error={formik.errors.file}
+            /> 
+            
+            <Button type='submit' className='btn-submit'>Agregar Asana</Button>
 
-    </Form>
+        </Form>
+    </>
   )
 }
