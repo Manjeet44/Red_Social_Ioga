@@ -1,28 +1,33 @@
-import React from 'react';
-import useAuth from '../../hooks/useAuth';
+import React, {useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import Profile from '../../components/Profile/Profile';
 import { useQuery } from '@apollo/client';
-import { GET_USER } from '../../gql/user';
-import ImageUploadForm from '../../components/ImageUploadForm/ImageUploadForm';
-import { Image } from 'semantic-ui-react';
-
-//Logica dins compoents<user<profile<profile
+import { GET_ASANA_USER } from '../../gql/asana';
 
 export default function User() {
-    const {auth} = useAuth();
-    const {data, loading} = useQuery(GET_USER, {
-        variables: {username: auth.username},
-    });
-    if(loading) return null;
-    const {getUser} = data;
+  const {username} = useParams();
+
+  const {data, loading, startPolling, stopPolling} = useQuery(GET_ASANA_USER, {
+    variables: {username}
+  });
+
+  useEffect(() => {
+    startPolling(1000);
+    return () => {
+      stopPolling();
+    }
+  }, [startPolling, stopPolling])
+  
+
+  if(loading) return null;
+  const {getAsanas} = data;
+  const totalPublications = getAsanas?.length;
+
+
+
   return (
-    <div>
-        <div>
-            <Image src={getUser?.avatar} avatar />
-            <p>{getUser.nombre}</p>
-            <p>{getUser.apellido}</p>
-            <p>{getUser.username}</p>
-        </div>
-        <ImageUploadForm/>
-    </div>
+    <>
+        <Profile username={username} totalPublications={totalPublications} />
+    </>
   )
 }

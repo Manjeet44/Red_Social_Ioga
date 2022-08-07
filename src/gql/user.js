@@ -29,3 +29,9 @@ export const GET_USER = gql`
         }
     }
 `;
+
+export const UPDATE_USER = gql`
+    mutation updateUser($input: UserUpdateInput) {
+        updateUser(input: $input)
+    }
+`;

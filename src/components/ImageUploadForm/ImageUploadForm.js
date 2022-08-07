@@ -1,16 +1,47 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import { Button } from 'semantic-ui-react';
-//import {useDropzone} from 'react-dropzone';
 import { useMutation } from '@apollo/client';
-//import { toast } from 'react-toastify';
+import { GET_USER } from '../../gql/user';
+import { toast } from 'react-toastify';
 import { UPLOAD_IMAGE } from '../../gql/asana';
 import './ImageUploadForm.scss';
 
-export default function ImageUploadForm() {
-    const [uploadImage, {data}] = useMutation(UPLOAD_IMAGE);
+export default function ImageUploadForm({setShowModal, auth}) {
+    const [uploadImage] = useMutation(UPLOAD_IMAGE, {
+      update(cache, {data: {uploadImage}}) {
+        const {getUser} = cache.readQuery({
+          query: GET_USER,
+          variables: {username: auth.username}
+        });
+        cache.writeQuery({
+          query: GET_USER,
+          variables: {username: auth.username},
+          data: {
+            getUser: {...getUser, avatar: uploadImage.urlImagen}
+          }
+        })
+      }
+    });
     const [newImage, setNewImage] = useState(null);
-    console.log(data)
-    console.log(newImage)
+    const subirAvatar = async (e) => {
+      e.preventDefault();
+      try {
+        const {data} = await uploadImage({
+          variables: {
+            file: newImage
+          }
+        });
+        if(!data.uploadImage.status) {
+          toast.warning('Error al actualizar el avatar');
+        } else {
+          setShowModal(false);
+        }
+      } catch (error) {
+        console.log(error);
+        setShowModal(false);
+      }
+      
+    }
 
   return (
     <div>
@@ -22,14 +53,7 @@ export default function ImageUploadForm() {
             setNewImage(e.target.files[0])
           } }
         />
-        <Button onClick={(e) => {
-          e.preventDefault();
-          uploadImage({
-            variables: {
-              file: newImage
-            }
-          })
-          }} >Subir</Button>
+        <Button onClick={subirAvatar} >Subir</Button>
     </div>
   )
 }

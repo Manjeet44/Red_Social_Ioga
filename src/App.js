@@ -20,7 +20,8 @@ function App() {
   }, []);
 
   const logout = () => {
-    console.log('cerar session')
+    localStorage.removeItem('token');
+    setAuth(null);
   }
 
   const setUser = (user) => {
