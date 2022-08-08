@@ -1,14 +1,11 @@
 import React from 'react';
 import Meditacion from '../../components/Meditacion/Meditacion';
-import {Button} from 'semantic-ui-react';
 import useAuth from '../../hooks/useAuth';
 import { useQuery } from '@apollo/client';
 import { GET_ASANA_USER } from '../../gql/asana';
-import { Link } from 'react-router-dom';
 import './Meditaciones.scss';
 
-
-//TODO: Map con cada meditacion
+//Incloure totes ses meditacions des qui seguesc
 
 export default function Meditaciones() {
   const {auth} = useAuth();
@@ -22,13 +19,7 @@ export default function Meditaciones() {
   return (
     <div className='contenedor'>
         <div className='contenedor_encabezado'>
-          <h2>Meditaciones</h2>
-          <Link to={'/nueva-meditacion'}>
-            <Button className='btn-new'>
-              Nueva Meditacion
-            </Button>
-          </Link>
-          
+          <h2>Meditaciones</h2>      
         </div>
         <div>
           {getAsanas?.map((asana, index) => (

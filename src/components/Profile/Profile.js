@@ -19,7 +19,7 @@ export default function Profile({username, totalPublications}) {
     const [childrenModal, setChildrenModal] = useState(null);
     const {auth} = useAuth();
     const {data, loading, refetch} = useQuery(GET_USER, {
-        variables: {username: auth.username},
+        variables: {username},
     });
 
     if(loading) return null;
@@ -51,7 +51,6 @@ export default function Profile({username, totalPublications}) {
     }
   return (
     <>
-      
           <div className='profile'>
             <div className='profile_imagen'>
               <Image
@@ -63,6 +62,14 @@ export default function Profile({username, totalPublications}) {
             <div className='seguidores-seguidos'>
               <HeaderUser username={username} getUser={getUser} auth={auth} handleModal={handleModal} />
               <Followers username={username} totalPublications={totalPublications} />
+              <div className='other'>
+                {getUser.siteWeb && (
+                  <a href={getUser.siteWeb} className='siteWeb' target='_blank'>{getUser.siteWeb}</a>
+                )}
+                {getUser.description && (
+                  <p className='description'>{getUser.description}</p>
+                )}
+              </div>
             </div>         
           </div>
       

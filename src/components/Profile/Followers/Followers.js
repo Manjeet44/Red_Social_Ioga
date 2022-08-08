@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { GET_FOLLOWEDS, GET_FOLLOWERS } from '../../../gql/follow';
+import { GET_FOLLOWEDS } from '../../../gql/follow';
+import { GET_FOLLOWERS } from '../../../gql/follow';
 import { useQuery } from '@apollo/client';
 import ModalBasic from '../../Modal/ModalBasic';
 import ListUser from '../ListUser/ListUser';
@@ -55,9 +56,10 @@ export default function Followers({username, totalPublications}) {
     return (
       <>
         <div className='followers'>
-            <p><span>{totalPublications}</span> Publicaciones</p>
-            <p className='link' onClick={openFollowers}><span>{seguidores}</span> Seguidores</p>
-            <p className='link' onClick={openFolloweds}><span>{seguidos}</span> Seguidos</p>
+            {/* TODO: Singular y plural de publicaciones */}
+            <p><span>{totalPublications}</span> Publicaciones</p> 
+            <p className='link' onClick={openFollowers}><span>{seguidores}</span>{' '} Seguidores</p>
+            <p className='link' onClick={openFolloweds}><span>{seguidos}</span>{' '} Seguidos</p>
         </div>
         <ModalBasic show={showModal} setShow={setShowModal} title={titleModal}>
           {childrenModal}

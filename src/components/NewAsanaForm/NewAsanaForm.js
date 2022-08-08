@@ -52,7 +52,7 @@ export default function NewAsanaForm() {
                 });
                 toast.success('Asana Agregada Correctamente');
                 setTimeout(() => {
-                    navigate('/meditaciones')
+                    navigate(`/${auth.username}`)
                     setNewImage(null)
                 }, 1500);
                 

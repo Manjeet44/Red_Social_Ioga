@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 95%;
+    width: 100%;
     height: 100%;
 
     &_encabezado {
@@ -27,5 +27,14 @@
         margin-top: 30px;
         font-size: 3rem;
         color: $border-bottom-purple;
+    }
+}
+
+.ui.button.btn-new {
+    background-color: $border-bottom-purple !important;
+    color: $font-light !important;
+    border-color: $border-header-purple !important;
+    &:hover {
+        opacity: 95%;
     }
 }

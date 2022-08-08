@@ -9,14 +9,16 @@
     display: grid;
     grid-template-columns: 2fr 4fr;
     grid-row: auto;
-    border-bottom: 1px solid black;
+    box-shadow: 0px 0px 6px 0px rgba(62, 0, 103, 0.5);
     &_imagen {
         display: flex;
         grid-column: 1 / 2;
         justify-content: center;
+        
         .ui.image.avatar {
             width: 170px;
             height: 170px;
+            z-index: -1;
             &:hover {
                 cursor: pointer;
             }
@@ -32,4 +34,16 @@
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 3px;
+    .other {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-weight: normal;
+        .description {
+            color: $font-link;
+            font-size: 16px;
+            margin-top: 5px;
+            
+        }
+    }
 }

@@ -25,6 +25,8 @@ export const GET_USER = gql`
             nombre
             apellido
             username
+            description
+            siteWeb
             avatar
         }
     }

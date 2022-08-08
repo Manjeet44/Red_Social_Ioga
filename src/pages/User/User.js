@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Profile from '../../components/Profile/Profile';
 import { useQuery } from '@apollo/client';
 import { GET_ASANA_USER } from '../../gql/asana';
+import Publicaciones from '../Publicaciones/Publicaciones';
 
 export default function User() {
   const {username} = useParams();
@@ -28,6 +29,7 @@ export default function User() {
   return (
     <>
         <Profile username={username} totalPublications={totalPublications} />
+        <Publicaciones/>
     </>
   )
 }
