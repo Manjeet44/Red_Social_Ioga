@@ -31,3 +31,16 @@ export const UPLOAD_IMAGE = gql`
         }
     }
 `;
+
+export const GET_ASANA_ID = gql`
+    query getAsana($id: ID!) {
+        getAsana(id: $id){
+            id
+            idUser
+            nombre
+            descripcion
+            beneficios
+            file
+        }
+    }
+`;

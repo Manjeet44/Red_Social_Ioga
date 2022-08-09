@@ -9,6 +9,7 @@ import Mantras from "../pages/Mantras/Mantras";
 import Alimentacion from "../pages/Alimentacion/Alimentacion";
 import NewAsanaForm from "../components/NewAsanaForm/NewAsanaForm";
 import User from "../pages/User/User";
+import MeditacionId from "../pages/MeditacionId/MeditacionId";
 //import Auth from "../pages/Auth/Auth";
 //import Error404 from "../pages/Error404";
 import LayoutBasic from "../layouts/LayoutBasic";
@@ -20,6 +21,7 @@ export default function Navigation() {
                 <Route element={<LayoutBasic/>}>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/meditaciones' element={<Meditaciones />}/>
+                    <Route path='/meditacion/:id' element={<MeditacionId />}/>
                     <Route path='/kriyas' element={<Kriyas />}/>
                     <Route path='/mantras' element={<Mantras />}/>
                     <Route path='/alimentacion' element={<Alimentacion />}/>
