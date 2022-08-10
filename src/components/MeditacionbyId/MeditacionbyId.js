@@ -4,9 +4,9 @@ import './MeditacionbyId.scss';
 
 export default function MeditacionbyId({asana}) {
     const {nombre, descripcion, file, beneficios} = asana;
+    //Incorporar Like
   return (
     <div className='meditacion-by-id'>
-            <Button className='btn-new'>Me Gusta</Button>
         <div className='meditacion-by-id_imagen'>
             <Image src={file} alt='imagen_Meditacion' />
         </div>
@@ -15,7 +15,6 @@ export default function MeditacionbyId({asana}) {
             <p className='meditacion-by-id_informacion-descripcion'>{descripcion}</p>
             <p className='meditacion-by-id_informacion-beneficios'>{beneficios}</p>
         </div>
-
     </div>
   )
 }

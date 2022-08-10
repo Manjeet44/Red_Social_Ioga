@@ -1,0 +1,31 @@
+@import '../../../scss/index.scss';
+
+.comments {
+    height: 100%;
+    overflow-y: scroll;
+
+    .comment {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid $border-grey;
+        
+        &:hover {
+            color: purple;
+        }
+        img {
+            margin-right: 15px !important;
+        }
+
+        p {
+            margin: 0;
+            &:first-of-type {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#usuario {
+    color: $font-dark;
+}

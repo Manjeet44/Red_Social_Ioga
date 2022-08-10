@@ -1,5 +1,7 @@
 import React from 'react';
 import Logo from '../../assets/energy-masters.png';
+import { useQuery } from '@apollo/client';
+import { COUNT_LIKES } from '../../gql/like';
 import { Link } from 'react-router-dom';
 import './Meditacion.scss';
 
@@ -8,7 +10,12 @@ import './Meditacion.scss';
 
 export default function Meditacion({asana, username}) {
   const {beneficios, descripcion, nombre, file, id} = asana;
-  console.log(id)
+  const {data: dataCount, loading: loadingCount} = useQuery(COUNT_LIKES, {
+    variables: {idAsana: id}
+  });
+
+  if(loadingCount) return null;
+  const {countLikes} = dataCount;
 
   return (
     <div className='contenedor_box'>
@@ -17,7 +24,7 @@ export default function Meditacion({asana, username}) {
               {/* <Image className='contenedor_box__imagen-asana' src={file} alt='logo'/> */}
             <img src={file ? file : Logo} className='contenedor_box__imagen-asana' alt='logo'/> 
             </Link>
-            <div className='contenedor_box-likes'> Subido por: {username} &#9829;160 Likes</div>
+            <div className='contenedor_box-likes'> Subido por: {username} &#9829; {countLikes} Likes</div>
         </div>
         <div className='contenedor_box-informacion'>
         <Link to={`/meditacion/${id}`}>

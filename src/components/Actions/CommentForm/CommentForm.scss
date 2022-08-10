@@ -1,0 +1,32 @@
+@import '../../../scss/index.scss';
+
+.comment-form {
+    display: flex;
+
+
+    .field {
+        margin: 0 !important;
+    
+
+        .ui.input {
+            height: 60px;
+            input {
+                border: 0;
+                border: 1px solid $border-grey;
+                border-radius: 1;
+                padding-right: 80px;
+            }
+        }
+    }
+    .ui.button {
+        background-color: transparent;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        height: 100%;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}

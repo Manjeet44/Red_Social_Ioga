@@ -1,0 +1,24 @@
+@import '../../../scss/index.scss';
+
+.actions_likes {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    .ui.button{
+        &:hover {
+            cursor: pointer;
+            opacity: 95%;
+        }
+    }
+
+        
+    
+
+    .like.active {
+        color: white;
+        background-color: $font-link;
+    }
+
+}
