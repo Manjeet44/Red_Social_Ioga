@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/energy-masters.png'
-//import Search from './Search/Search';
+import Search from './Search/Search';
 import MenuEnergy from '../Menu/MenuEnergy';
 import RightHeader from './RightHeader/RightHeader';
 import './Header.scss';
@@ -20,12 +20,12 @@ export default function Header() {
                     </Link>
                 </Grid.Column>
                 
-                <Grid.Column width={10}>
+                <Grid.Column width={6}>
                     <MenuEnergy />
                 </Grid.Column>
-                {/* <Grid.Column width={2}>
+                <Grid.Column width={4}>
                     <Search/>
-                </Grid.Column> */}
+                </Grid.Column>
 
                 <Grid.Column width={3}>
                     <RightHeader/>

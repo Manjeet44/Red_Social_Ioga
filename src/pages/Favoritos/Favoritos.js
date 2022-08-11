@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react';
-import FollowedMeditacion from '../../components/FollowedMeditacion/FollowedMeditacion';
 import {useQuery} from '@apollo/client';
-import { GET_ASANAS_FOLLOWEDS } from '../../gql/asana';
-import './Meditaciones.scss';
+import { GET_ASANA_BY_LIKE } from '../../gql/asana';
+
 
 //Incloure totes ses meditacions des qui seguesc
 
-export default function Meditaciones() {
-  const {data, loading, startPolling, stopPolling} = useQuery(GET_ASANAS_FOLLOWEDS);
+export default function Favoritos() {
+  const {data, loading, startPolling, stopPolling} = useQuery(GET_ASANA_BY_LIKE);
 
   useEffect(() => {
     startPolling(1000);
@@ -17,19 +16,19 @@ export default function Meditaciones() {
   }, [startPolling, stopPolling]);
 
   if(loading) return null;
-  const {getAsanaFolloweds} = data;
-  console.log(getAsanaFolloweds)
+  const {getAsanaByLike} = data;
+
 
   return (
     <div className='contenedor'>
         <div className='contenedor_encabezado'>
-          <h2>Meditaciones de Usuarios</h2>      
+          <h2>Mis Favoritos</h2>      
         </div>
         <div>
-          {getAsanaFolloweds?.map((asana, index) => (
+          {getAsanaByLike?.map((asana, index) => (
             <div  className='contenedor_meditaciones' key={index}>
               
-              <FollowedMeditacion asana={asana} />
+              <p>{asana.nombre}</p>
 
             </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Button } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import './MeditacionbyId.scss';
 
 export default function MeditacionbyId({asana}) {

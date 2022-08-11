@@ -19,11 +19,11 @@ export default function MenuEnergy() {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/kriyas'>
-              Kriyas
+            <NavLink to='/favoritos'>
+              Favoritos
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to='/mantras'>
               Mantras
             </NavLink>
@@ -32,7 +32,7 @@ export default function MenuEnergy() {
             <NavLink to='/alimentacion'>
               Alimentacion
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

@@ -4,7 +4,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 //Pages
 import Home from "../pages/Home/Home";
 import Meditaciones from "../pages/Meditaciones/Meditaciones";
-import Kriyas from "../pages/Kriyas/Kriyas";
+import Favoritos from "../pages/Favoritos/Favoritos";
+//import Kriyas from "../pages/Kriyas/Kriyas";
 import Mantras from "../pages/Mantras/Mantras";
 import Alimentacion from "../pages/Alimentacion/Alimentacion";
 import NewAsanaForm from "../components/NewAsanaForm/NewAsanaForm";
@@ -22,7 +23,7 @@ export default function Navigation() {
                     <Route path='/' element={<Home/>}/>
                     <Route path='/meditaciones' element={<Meditaciones />}/>
                     <Route path='/meditacion/:id' element={<MeditacionId />}/>
-                    <Route path='/kriyas' element={<Kriyas />}/>
+                    <Route path='/favoritos' element={<Favoritos />}/>
                     <Route path='/mantras' element={<Mantras />}/>
                     <Route path='/alimentacion' element={<Alimentacion />}/>
                     <Route path='/nueva-meditacion' element={<NewAsanaForm />}/>

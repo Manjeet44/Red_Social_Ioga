@@ -3,12 +3,12 @@ import Logo from '../../assets/energy-masters.png';
 import { useQuery } from '@apollo/client';
 import { COUNT_LIKES } from '../../gql/like';
 import { Link } from 'react-router-dom';
-import './Meditacion.scss';
+import './FollowedMeditacion.scss';
 
 //TODO: Acomodar box grid quan feim petita sa finestra
 //TODO: Nom usuari de qui puja sa Meditacio
 
-export default function Meditacion({asana, username}) {
+export default function FollowedMeditacion({asana}) {
   const {beneficios, descripcion, nombre, file, id} = asana;
   const {data: dataCount, loading: loadingCount} = useQuery(COUNT_LIKES, {
     variables: {idAsana: id}
@@ -16,6 +16,7 @@ export default function Meditacion({asana, username}) {
   
   if(loadingCount) return null;
   const {countLikes} = dataCount;
+  const usuario = asana.idUser.username;
 
   return (
     <div className='contenedor_box'>
@@ -24,7 +25,7 @@ export default function Meditacion({asana, username}) {
               {/* <Image className='contenedor_box__imagen-asana' src={file} alt='logo'/> */}
             <img src={file ? file : Logo} className='contenedor_box__imagen-asana' alt='logo'/> 
             </Link>
-            <div className='contenedor_box-likes'> Subido por: {username} &#9829; {countLikes} Likes</div>
+            <div className='contenedor_box-likes'> Subido por: {usuario}  &#9829; {countLikes} Likes</div>
         </div>
         <div className='contenedor_box-informacion'>
         <Link to={`/meditacion/${id}`}>

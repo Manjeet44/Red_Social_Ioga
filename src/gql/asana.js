@@ -36,11 +36,45 @@ export const GET_ASANA_ID = gql`
     query getAsana($id: ID!) {
         getAsana(id: $id){
             id
-            idUser
+            idUser 
             nombre
             descripcion
             beneficios
             file
         }
     }
+`;
+
+export const GET_ASANAS_FOLLOWEDS = gql`
+    query getAsanaFolloweds {
+        getAsanaFolloweds{
+            id
+            idUser {
+                nombre
+                username
+                avatar
+            }
+        file
+        nombre
+        descripcion
+        beneficios
+        typeFile
+        createAt
+        }
+    }
+`;
+
+export const GET_ASANA_BY_LIKE = gql `
+    query getAsanaByLike{
+    getAsanaByLike{
+        id
+        nombre
+        beneficios
+        descripcion
+        file
+        createAt
+        
+    }
+}
+
 `;
