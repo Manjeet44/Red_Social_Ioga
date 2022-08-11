@@ -23,16 +23,6 @@ export default function MenuEnergy() {
               Favoritos
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink to='/mantras'>
-              Mantras
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/alimentacion'>
-              Alimentacion
-            </NavLink>
-          </li> */}
         </ul>
       </nav>
     </>

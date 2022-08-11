@@ -8,7 +8,7 @@ import './MeditacionId.scss';
 
 export default function MeditacionId() {
     const {id} = useParams();
-    const {data, loading, refetch} = useQuery(GET_ASANA_ID, {
+    const {data, loading} = useQuery(GET_ASANA_ID, {
         variables: {id}
     });
     if(loading) return null;
