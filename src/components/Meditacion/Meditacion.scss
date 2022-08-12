@@ -67,3 +67,18 @@
         color: green;
     }
 }
+
+.ui.button.btn-delete {
+    background-color: $danger !important;
+    color: $font-light !important;
+    border-color: $border-header-purple !important;
+    position: absolute;
+    right: 12%;
+}
+.ui.button.btn-edit {
+    background-color: $border-fav !important;
+    color: $font-light !important;
+    border-color: $border-header-purple !important;
+    position: absolute;
+    right: 19%;
+}

@@ -76,5 +76,21 @@ export const GET_ASANA_BY_LIKE = gql `
         
     }
 }
+`;
 
+export const DELETE_ASANA = gql`
+    mutation deleteAsana($idAsana: ID!) {
+        deleteAsana(idAsana: $idAsana)
+    }
+`;
+
+export const UPDATE_ASANA = gql`
+    mutation editarAsana($idAsana: ID!, $input: AsanaUpdate) {
+    editarAsana(idAsana: $idAsana, input: $input){
+        nombre
+        beneficios
+        descripcion
+        file
+    }
+}
 `;

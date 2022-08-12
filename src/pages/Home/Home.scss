@@ -10,7 +10,7 @@
     }
     
     h2 {
-        color: #9C85A0;
+        color: $font-link;
         text-align: center;
         font-size: 1.7rem;
         margin-bottom: 2rem;
@@ -22,7 +22,7 @@
     }
     .article {
         p {
-            color: $font-link;
+            color: #9C85A0;
             font-size: 1.5rem;
             font-weight: bold;
             line-height: 3rem;
@@ -32,7 +32,7 @@
             li{
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: $font-link;
+                color: #9C85A0;
                 line-height: 2rem;
             }
         }

@@ -27,7 +27,7 @@ export default function Favoritos() {
         </div>
         <div>
           {getAsanaByLike.length === 0 ? <p className='color-fav'>Empieza agregar a favoritos...</p> : ( getAsanaByLike?.map((asana, index) => (
-            <div  className='contenedor_meditaciones' key={index}>
+            <div  className='contenedor_fav' key={index}>
               
               <Favorito asana={asana} />
 
