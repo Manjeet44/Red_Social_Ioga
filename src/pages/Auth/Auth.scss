@@ -1,5 +1,6 @@
 @import '../../scss/index.scss';
 
+
 .auth {
     display: flex !important;
     align-items: center;
@@ -7,6 +8,7 @@
     flex-direction: column;
     height: 100vh;
     background-color: $background-grey-light;
+    
 
     img {
         width: 250px;

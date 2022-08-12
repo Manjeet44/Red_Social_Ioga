@@ -9,7 +9,7 @@ export default function Actions({asana}) {
       <>
         <div className='actions'>
             <div className='actions_comments'>
-                <h2>Comentarios</h2>
+                <h2>Dime tu Experiencia</h2>
                 <Comments asana={asana} />
                 <CommentForm asana={asana} />
             </div>

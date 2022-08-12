@@ -26,14 +26,14 @@ export default function Meditaciones() {
           <h2>Meditaciones de Usuarios</h2>      
         </div>
         <div>
-          {getAsanaFolloweds?.map((asana, index) => (
+          {getAsanaFolloweds.length === 0 ? (<p className='color'>La gente que sigues no tiene Publicaciones...</p>) : (getAsanaFolloweds?.map((asana, index) => (
             <div  className='contenedor_meditaciones' key={index}>
               
               <FollowedMeditacion asana={asana} />
 
             </div>
 
-          ))}
+          )))}
         </div>
     </div>
   )

@@ -8,6 +8,8 @@
     width: 95%;
     height: 100%;
 
+
+
     &_encabezado {
         display: flex;
         flex-direction: row;
@@ -28,4 +30,9 @@
         font-size: 3rem;
         color: $border-bottom-purple;
     }
+}
+
+.color {
+    font-size: 1.5rem;
+    color: $border-bottom-purple;
 }

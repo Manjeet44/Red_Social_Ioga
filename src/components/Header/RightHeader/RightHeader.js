@@ -25,7 +25,7 @@ export default function RightHeader() {
             <Link to='/'>
                 <Icon name='home' color='purple' />
             </Link>
-            <Link to='/'>
+            <Link to='/nueva-meditacion'>
                 <Icon name='plus' color='purple' /> 
             </Link>
             <Link to={`/${auth.username}`}>
