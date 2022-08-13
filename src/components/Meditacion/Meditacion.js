@@ -63,7 +63,7 @@ export default function Meditacion({asana, username}) {
           
             <Link to={`/meditacion/${id}`}>
               {/* <Image className='contenedor_box__imagen-asana' src={file} alt='logo'/> */}
-            <img src={file ? file : Logo} className='contenedor_box__imagen-asana' alt='logo'/> 
+              <img src={file ? file : Logo} className='contenedor_box__imagen-asana' alt='logo'/> 
             </Link>
             <div className='contenedor_box-likes'> Subido por: {username} &#9829; {countLikes} Likes</div>
         </div>
@@ -74,9 +74,9 @@ export default function Meditacion({asana, username}) {
             <Button className='btn-delete' onClick={onDelete}>Delete</Button>
           </>) }
           
-        <Link to={`/meditacion/${id}`}>
-            <p className='contenedor_box-nombre'>{nombre}</p>
-        </Link>
+          <Link to={`/meditacion/${id}`}>
+              <p className='contenedor_box-nombre'>{nombre}</p>
+          </Link>
             <p className='contenedor_box-descripcion'>{descripcion}</p>
             <p className='contenedor_box-beneficios'>{beneficios}</p>
         </div>  

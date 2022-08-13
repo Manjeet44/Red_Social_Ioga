@@ -31,7 +31,7 @@ export default function Publicaciones() {
                 </Button>
             </Link>}
         </div>
-        <div>
+        <div className='contenedor_asanas'>
           {getAsanas.length === 0 ? (<p className='color'>No tienes Publicaciones...</p>) : (getAsanas?.map((asana, index) => (
             <div  className='contenedor_meditaciones' key={index}>
               <Meditacion asana={asana} username={username} />

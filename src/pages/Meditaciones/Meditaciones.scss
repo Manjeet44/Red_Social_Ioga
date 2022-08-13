@@ -17,11 +17,16 @@
         width: 100%;
         justify-content: space-between;
         margin-bottom: 10px;
+        @media (max-width: 991px) {
+            
+            text-align: center;
+        }
         
     }
 
     &_meditaciones {
         padding: 1rem;
+        
     }
     
     h2 {
