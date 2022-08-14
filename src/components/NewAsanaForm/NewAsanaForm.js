@@ -64,7 +64,7 @@ export default function NewAsanaForm() {
     });
   return (
       <>
-        <Form className='form-asana' onSubmit={formik.handleSubmit}>
+        <Form className='form-asana-new' onSubmit={formik.handleSubmit}>
         <h2>Nueva Meditacion</h2>
             <Form.Input 
                     type='text'

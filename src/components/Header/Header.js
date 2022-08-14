@@ -23,11 +23,11 @@ export default function Header() {
                 <Grid.Column width={6}>
                     <MenuEnergy />
                 </Grid.Column>
-                <Grid.Column width={4}>
+                <Grid.Column width={4} className='search'>
                     <Search/>
                 </Grid.Column>
 
-                <Grid.Column width={3}>
+                <Grid.Column width={3} className='right-reader'>
                     <RightHeader/>
                 </Grid.Column>
             </Grid>

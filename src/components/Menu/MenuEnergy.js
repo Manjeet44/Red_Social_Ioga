@@ -8,17 +8,17 @@ export default function MenuEnergy() {
     <>
       <nav>
         <ul className='nav__links'>
-          <li>
+          <li className='nav__links_item'>
             <NavLink to='/'>
               Inicio
             </NavLink>
           </li>
-          <li>
+          <li className='nav__links_item'>
             <NavLink to='/meditaciones'>
               Meditaciones
             </NavLink>
           </li>
-          <li>
+          <li className='nav__links_item'>
             <NavLink to='/favoritos'>
               Favoritos
             </NavLink>
