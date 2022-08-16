@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 import { useNavigate } from "react-router-dom";
-import ImageNoFound from '../../../assets/energy-masters.png';
+import ImageNoFound from '../../../assets/energy-masters.jpg';
 import './ListUser.scss';
 
 export default function ListUser({users, setShowModal}) {

@@ -10,13 +10,23 @@
     &__logo {
         display: flex;
         align-items: center;        
-
+        a {
+            align-items: center;
+            justify-content: center;
+        }
         img {
-            height: 25px;
-            
+            max-height: 50px;
+            max-width: 60px;
+            object-fit: cover;
 
         }
     }
+}
+.header__logo_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 @media (max-width: 600px) {
     .header {

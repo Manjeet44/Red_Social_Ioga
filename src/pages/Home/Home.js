@@ -1,4 +1,5 @@
 import React from 'react';
+import UserNotFolloweds from './UserNotFollowed/UserNotFollowed';
 import './Home.scss';
 
 
@@ -6,9 +7,11 @@ export default function Home() {
 
   return (
     <div className='home'>
+        
         <h1>Bienvendi@ a Energy Masters!</h1>
         <section>
           <h2>Encuentra Profesores alrededor de todo el mundo!</h2>
+          
           <h3>Que es Energy Masters?</h3>
           <article className='article'>
             <p>Energy Masters es una Red Social el cual puedes compartir, buscar y agregar Meditaciones. Todas las
@@ -29,6 +32,7 @@ export default function Home() {
             concentración, creatividad y otros aspectos cognitivos del ser humano. Como he dicho 
             antes no hay nada divino o espiritual. Es una habilidad que se perfecciona con la práctica, 
             como cualquier otra.</p>
+            <div>
             <h3>Los principales beneficios son:</h3>
               <ul>
                 <li>Control de estres</li>
@@ -41,6 +45,10 @@ export default function Home() {
                 <li>Mejorar la calidad del sueño</li>
                 <li>Y muchos mas...</li>
               </ul>
+              <div>
+                <UserNotFolloweds/>
+              </div>
+            </div>
             <h2>Comenta, agrega favoritos y comparte!</h2>
             <h2>Tambien puedes subir tu propia meditacion con un Formulario sencillo.</h2>
           </article>

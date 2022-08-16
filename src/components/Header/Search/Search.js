@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { SEARCH_USER } from '../../../gql/user'; 
 import './Search.scss';
-import ImageNoFound from '../../../assets/energy-masters.png';
+import ImageNoFound from '../../../assets/energy-masters.jpg';
 
 export default function Search() {
     const [search, setSearch] = useState(null);

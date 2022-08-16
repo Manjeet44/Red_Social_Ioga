@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import ImageNoFound from '../../../assets/energy-masters.png'
+import ImageNoFound from '../../../assets/energy-masters.jpg'
 import { Image } from 'semantic-ui-react';
 import { useQuery } from '@apollo/client';
 import { GET_COMMENTS } from '../../../gql/comment';

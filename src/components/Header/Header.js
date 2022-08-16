@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Grid, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/energy-masters.png'
+import Logo from '../../assets/energy-masters2.png';
 import Search from './Search/Search';
 import MenuEnergy from '../Menu/MenuEnergy';
 import RightHeader from './RightHeader/RightHeader';
@@ -15,7 +15,7 @@ export default function Header() {
         <Container>
             <Grid>
                 <Grid.Column width={3} className='header__logo'>
-                    <Link to='/'>
+                    <Link to='/' className='header__logo_link'>
                         <Image src={Logo} alt='energymasters' className='logo' />
                     </Link>
                 </Grid.Column>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/energy-masters.png';
+import Logo from '../../assets/energy-masters.jpg';
 import { useQuery } from '@apollo/client';
 import { COUNT_LIKES } from '../../gql/like';
 import { Link } from 'react-router-dom';

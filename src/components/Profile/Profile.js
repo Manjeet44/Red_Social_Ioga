@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { GET_USER } from '../../gql/user';
 import ImageUploadForm from '../ImageUploadForm/ImageUploadForm';
 import { Image } from 'semantic-ui-react';
-import ImageNoFound from '../../assets/energy-masters.png';
+import ImageNoFound from '../../assets/energy-masters.jpg';
 import ModalBasic from '../Modal/ModalBasic';
 import SettingsForm from '../SettingsForm/SettingsForm';
 import HeaderUser from './HeaderUser/HeaderUser';

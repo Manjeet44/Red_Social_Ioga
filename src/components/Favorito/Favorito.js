@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/energy-masters.png';
+import Logo from '../../assets/energy-masters.jpg';
 import './Favorito.scss';
 
 export default function Favorito({asana}) {

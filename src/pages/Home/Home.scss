@@ -10,7 +10,7 @@
     }
     
     h2 {
-        color: $font-link;
+        color: #7D8890;
         text-align: center;
         font-size: 1.7rem;
         margin-bottom: 2rem;
@@ -22,7 +22,7 @@
     }
     .article {
         p {
-            color: #9C85A0;
+            color: #7D8890;
             font-size: 1.5rem;
             font-weight: bold;
             line-height: 3rem;
@@ -32,7 +32,7 @@
             li{
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: #9C85A0;
+                color: #7D8890;
                 line-height: 2rem;
             }
         }
@@ -40,4 +40,11 @@
         
     }
     
+}
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
