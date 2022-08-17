@@ -3,7 +3,7 @@ import {createUploadLink} from 'apollo-upload-client';
 import {setContext} from 'apollo-link-context';
 
 const httpLink = createUploadLink({
-    uri: 'https://andreu-redsocial-yoga.herokuapp.com/'
+    uri: 'https://andreu-redsocial-yoga.herokuapp.com/graphql'
 });
 
 const authLink = setContext((_, {headers}) => {
