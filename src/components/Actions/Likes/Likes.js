@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { useMutation, useQuery } from '@apollo/client';
 import { IS_LIKE, COUNT_LIKES, ADD_LIKE, DELETE_LIKE } from '../../../gql/like';
 import './Likes.scss';
 
 export default function Likes({asana}) {
-    const [loadingAction, setLoadingAction] = useState(false);
     const [addLike] = useMutation(ADD_LIKE);
     const [deleteLike] = useMutation(DELETE_LIKE);
 
@@ -18,7 +17,6 @@ export default function Likes({asana}) {
     });
 
     const onAddLike = async () => {
-        setLoadingAction(true)
         try {
             await addLike({
                 variables: {idAsana: asana.id}
@@ -28,11 +26,9 @@ export default function Likes({asana}) {
         } catch (error) {
             console.log(error);
         }
-        setLoadingAction(false)
     }
 
     const onDeleteLike = async () => {
-        setLoadingAction(true)
         try {
             await deleteLike({
                 variables: {idAsana: asana.id}
@@ -42,17 +38,14 @@ export default function Likes({asana}) {
         } catch (error) {
             console.log(error);
         }
-        setLoadingAction(false);
     }
 
     const onAction = () => {
-        if(!loadingAction) {
             if(isLike) {
                 onDeleteLike();
             } else {
                 onAddLike();
             }
-        }
     }
 
     if(loading || loadingCount) return null;
